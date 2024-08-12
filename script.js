@@ -92,3 +92,5 @@ function playGame() {
     }
     console.log(`Final Score: ${humanScore}-${computerScore}`)
 }
+
+playGame()
