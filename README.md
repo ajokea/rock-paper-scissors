@@ -1,3 +1,4 @@
-In this project, I used my knowledge of JavaScript fundamentals to create a simple console game of Rock, Paper, Scissors. 
+In this project, I used my knowledge of JavaScript fundamentals to create a simple game of Rock, Paper, Scissors with minimal UI. 
 
-The game is 5 rounds and prompts the user each round for a choice.
+The player can click on a button to choose rock, paper, or
+scissors, and whoever scores 5 points first wins the game.
