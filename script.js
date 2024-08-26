@@ -24,6 +24,7 @@ function playGame() {
     const body = document.querySelector('body');
 
     const buttons = document.createElement('div');
+    buttons.classList.add('buttons');
 
     const rockBtn = document.createElement('button');
     const paperBtn = document.createElement('button');
@@ -47,18 +48,24 @@ function playGame() {
     buttons.appendChild(paperBtn);
     buttons.appendChild(scissorsBtn);
 
-    body.appendChild(buttons);
-
     const results = document.createElement('div');
-    const update = document.createElement('p');
-    const score = document.createElement('p');
-    score.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
-    const endGame = document.createElement('p');
-    results.appendChild(update);
-    body.append(results, score, endGame);
+    results.classList.add('results')
+    const update = document.createElement('h2');
+    const hScore = document.createElement('h2');
+    const cScore = document.createElement('h2');
+    hScore.textContent = `You: ${humanScore}`;
+    update.textContent = ""
+    cScore.textContent = `Computer: ${computerScore}`;
+    const endGame = document.createElement('h1');
+    results.append(hScore, update, cScore);
+    body.append(results, endGame);
+
+    body.appendChild(buttons);
 
     function playRound(humanChoice, computerChoice) {
         endGame.textContent = "";
+        hScore.textContent = `You: ${humanScore}`;
+        cScore.textContent = `Computer: ${computerScore}`;
         if(humanChoice === computerChoice) {
             update.textContent = `Tie! You both chose ${humanChoice}!`;
         } else {
@@ -101,7 +108,8 @@ function playGame() {
                 }
             }
         }
-        score.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
+        hScore.textContent = `You: ${humanScore}`;
+        cScore.textContent = `Computer: ${computerScore}`;
 
         if (humanScore == 5 || computerScore == 5) {
             endGame.textContent = humanScore == 5 ? "YOU WIN!" : "COMPUTER WINS!";
